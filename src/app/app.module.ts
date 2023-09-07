@@ -33,6 +33,7 @@ import { QuizSpaceComponent } from './candidate-space/quiz-space/quiz-space.comp
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
 import { HomePageOfCandidateComponent } from './candidate-space/home-page-of-candidate/home-page-of-candidate.component';
+import { SimpleNotificationsModule } from 'angular2-notifications';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { HomePageOfCandidateComponent } from './candidate-space/home-page-of-can
     MatCardModule,
     MatButtonModule,
     NgxPaginationModule,
+    
 
   ],
   providers: [],

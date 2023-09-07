@@ -231,6 +231,18 @@ export class QuizSpaceComponent {
   submit() {
     this.getcandidateInfo();
     this.setCandidateResponse();
+
+
+    let username=(document.getElementById("name") as HTMLInputElement).value;
+    let phone=(document.getElementById("phone") as HTMLInputElement).value;
+    let email=(document.getElementById("email") as HTMLInputElement).value;
+
+    if(username=="" || phone=="" || email=="" ){
+      //TOASTR
+      alert("Please fill out the form below!");
+      
+    }
+    else {
   
     // Save the user first
     this.user.answers=this.selectedAnswers;
@@ -257,6 +269,7 @@ export class QuizSpaceComponent {
       }
     );
     this.showSuccessToastrAndRedirect();
+    }
   }
   
 
@@ -273,15 +286,15 @@ export class QuizSpaceComponent {
 
     //save score
     private saveScore(score:Score){
-      this.scoreService.saveScore(score).subscribe(
-        (response:Score)=>{
-          this.score.id=response.id;
-          console.log('score added successfully !',response);
+        this.scoreService.saveScore(score).subscribe(
+          (response:Score)=>{
+            this.score.id=response.id;
+            console.log('score added successfully !',response);
+          }
+        ),
+        (error:Error)=>{
+          console.log('Error adding score !',error);
         }
-      ),
-      (error:Error)=>{
-        console.log('Error adding score !',error);
-      }
     }
 
     showSuccessToastrAndRedirect() {
