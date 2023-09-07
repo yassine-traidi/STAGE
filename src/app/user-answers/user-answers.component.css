@@ -28,7 +28,7 @@
 }
 
 .fade-out {
-  animation: fade-out 1s ease-in-out forwards; /* Apply fade-out animation */
+  animation: fade-out 1s ease-in-out forwards; 
 }
 
 .container-mt-4{
@@ -75,7 +75,7 @@ body{
 .list-group-item {
   background-color: #ffffff;
   border: 1px solid #e2e2e2;
-  margin-bottom: 0; /* Remove the margin at the bottom */
+  margin-bottom: 0; 
   padding: 20px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.623);
 }
@@ -89,7 +89,7 @@ p {
   font-size: 1rem;
   color: #333333;
   margin-bottom: 10px;
-  line-height: 1.6; /* Adjust line spacing */
+  line-height: 1.6; 
 }
 
 .list-group-item h5.mb-3,

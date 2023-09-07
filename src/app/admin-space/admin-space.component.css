@@ -40,7 +40,6 @@
     background-color: #0056b3;
   }
   
-  /* Animation */
   .button-clicked {
     animation: translateYAnimation 0.2s ease-out;
   }

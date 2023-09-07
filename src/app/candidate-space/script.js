@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   
   
-    // Function to scroll down to the content
+    //scroll down to the content
     function scrollToContent() {
       const contentElement = document.getElementById('routerOutlet');
       if (contentElement) {
@@ -29,14 +29,12 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
   
-    // Use Angular's router event to trigger the scrolling
+   
     window.addEventListener('load', () => {
-      // Initially scroll to the content if there's a hash in the URL
       if (window.location.hash) {
         scrollToContent();
       }
   
-      // Listen for route changes and scroll to content
       window.addEventListener('hashchange', () => {
         scrollToContent();
       });

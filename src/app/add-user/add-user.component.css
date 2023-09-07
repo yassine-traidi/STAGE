@@ -24,7 +24,7 @@
   
   .form-group input {
     width: 100%;
-    padding: 8px; /* Adjusted padding value */
+    padding: 8px; 
     border: 2px solid #ccc;
     border-radius: 10px;
     font-size: 1rem;
@@ -50,7 +50,7 @@
     border: 2px solid #ccc;
     border-radius: 10px;
     font-size: 1rem;
-    box-sizing: border-box; /* Add this */
+    box-sizing: border-box; 
   }
   
   

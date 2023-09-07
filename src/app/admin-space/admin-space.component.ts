@@ -39,8 +39,8 @@ export class AdminSpaceComponent {
   handleClick(buttonId: string) {
     this.buttonState = buttonId;
     setTimeout(() => {
-      this.buttonState = null; // Reset the animation state
-    }, 200); // Adjust the timing to match your animation duration
+      this.buttonState = null; 
+    }, 200);
   }
 
 }

@@ -178,7 +178,6 @@ export class QuizSpaceComponent {
   }
   
 
-  //scroll up when next-page is clicked
   scrollToTop() {
     window.scrollTo({
       top:0,
@@ -296,8 +295,9 @@ export class QuizSpaceComponent {
       }
       else{
       // TOASTR
+      alert("Submission successfull !");
     
-      // Redirect to the home page
+      // Redirect to quizzes
      this.router.navigate(['/list-quizzes-for-candidate']);
       }
     }

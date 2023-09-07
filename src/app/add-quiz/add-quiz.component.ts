@@ -9,19 +9,15 @@ import { Router } from '@angular/router';
   template: `
     <body class="container">
     <div class="quiz-management">
-      <!-- Popup Form -->
       <div class="form-popup" [ngStyle]="{ display: isFormVisible ? 'block' : 'none' }">
         <div class="form-container">
           <h2>Add Quiz</h2>
 
-          <!-- Quiz Description Input -->
           <label for="quizDescription">Description</label>
           <input type="text" id="quizDescription" name="quizDescription" [(ngModel)]="quiz.description">
 
-          <!-- Save Button -->
           <button class="btn save-button" (click)="saveQuiz()">Save Quiz</button>
 
-          <!-- Close Button -->
           <button class="btn cancel" (click)="toggleForm()">Close</button>
         </div>
       </div>

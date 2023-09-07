@@ -87,7 +87,7 @@ export class AddQuestionComponent implements OnInit{
   private navigateToSamePage() {
     this.router.navigate([], {
       relativeTo: this.route, 
-      queryParamsHandling: 'preserve', // Preserve existing query parameters
+      queryParamsHandling: 'preserve',
     });
   }
 
@@ -118,20 +118,6 @@ export class AddQuestionComponent implements OnInit{
     this.quizService.addQuestionToQuiz(this.quizId, question).subscribe(
       (response: Question) => {
         console.log('Question added successfully to quiz!', response);
-        /*if (this.answers.length > 0) {
-          const answerObservables = this.answers.map(answer => {
-            return this.questionService.addAnswer(answer, question.id);
-          });
-  
-          forkJoin(answerObservables).subscribe(
-            (answerResponses: Answer[]) => {
-              console.log('All answers added successfully!', answerResponses);
-            },
-            (error: Error) => {
-              console.log('Error adding answers!', error);
-            }
-          );
-        }*/
       },
       (error: Error) => {
         console.log('Error adding question to quiz!', error);
