@@ -6,7 +6,7 @@
   <title>Mosofty</title>
 </head>
 <body>
-  <div class="main-container" *ngIf="isAdmin">
+  <div class="main-container">
     <main>
       <div id="sidebar">
         <h2>M<b style="color: rgb(84, 196, 196);">o</b>softy</h2>
@@ -40,9 +40,6 @@
         <router-outlet></router-outlet>
       </div>
     </main>
-  </div>
-  <div *ngIf="!isAdmin">
-    <app-home-page-of-candidate></app-home-page-of-candidate>
   </div>
 </body>
 </html>

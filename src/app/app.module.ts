@@ -30,6 +30,10 @@ import { NavbarComponent } from './candidate-space/navbar/navbar.component';
 import { FooterComponent } from './candidate-space/footer/footer.component';
 import { ListQuizzesForCandidateComponent } from './candidate-space/list-quizzes-for-candidate/list-quizzes-for-candidate.component';
 import { QuizSpaceComponent } from './candidate-space/quiz-space/quiz-space.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { HomePageOfCandidateComponent } from './candidate-space/home-page-of-candidate/home-page-of-candidate.component';
+import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +58,8 @@ import { QuizSpaceComponent } from './candidate-space/quiz-space/quiz-space.comp
     FooterComponent,
     ListQuizzesForCandidateComponent,
     QuizSpaceComponent,
+    HomePageOfCandidateComponent,
+    AdminNavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +69,8 @@ import { QuizSpaceComponent } from './candidate-space/quiz-space/quiz-space.comp
     MatIconModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    NgxPaginationModule,
 
   ],
   providers: [],

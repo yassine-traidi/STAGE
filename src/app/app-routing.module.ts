@@ -17,6 +17,9 @@ import { ListSubmissionsComponent } from './list-submissions/list-submissions.co
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { UserAnswersComponent } from './user-answers/user-answers.component';
+import { ListQuizzesForCandidateComponent } from './candidate-space/list-quizzes-for-candidate/list-quizzes-for-candidate.component';
+import { QuizSpaceComponent } from './candidate-space/quiz-space/quiz-space.component';
+import { HomePageOfCandidateComponent } from './candidate-space/home-page-of-candidate/home-page-of-candidate.component';
 
 const routes: Routes = [
   {path:'', redirectTo: '/home-page', pathMatch: 'full' },
@@ -36,7 +39,10 @@ const routes: Routes = [
   {path:'list-submissions',component:ListSubmissionsComponent},
   {path:'user-details',component:UserDetailsComponent},
   {path:'home-page',component:HomePageComponent},
-  {path:'user-answers',component:UserAnswersComponent}
+  {path:'user-answers',component:UserAnswersComponent},
+  {path:'list-quizzes-for-candidate',component:ListQuizzesForCandidateComponent},
+  {path:'quiz-space',component:QuizSpaceComponent},
+  {path:'home-page-of-candidate',component:HomePageOfCandidateComponent},
 ];
 
 @NgModule({

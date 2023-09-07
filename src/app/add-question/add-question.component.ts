@@ -146,7 +146,8 @@ export class AddQuestionComponent implements OnInit{
       const newAnswer: Answer = {
         content: this.newAnswerContent,
         value: this.newAnswerValue,
-        question_id: this.question.id
+        question_id: this.question.id,
+        selected:false,
       };
 
       this.answers.push(newAnswer);
