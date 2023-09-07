@@ -13,7 +13,6 @@ main {
 }
 
 #sidebar {
-  width: 250px;
   background:linear-gradient(to bottom,rgb(15, 9, 56),rgb(27, 39, 117));
   color: #fff;
   padding: 20px;
