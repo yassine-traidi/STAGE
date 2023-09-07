@@ -1,0 +1,124 @@
+/* Add this CSS code to your list-quizzes.component.css file */
+
+.quiz-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .quiz-card {
+    width: 300px;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    opacity: 0.7 ;
+    transition-duration: 0.5s
+  }
+  
+  .quiz-card:hover {
+    background-color: #ffffff;
+    opacity: 1;
+    
+  }
+  
+  .card-content {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .quiz-description {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .button {
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.3s;
+    margin-bottom: 5px;
+    border-radius: 5px;
+  }
+  
+  .button.delete {
+    background-color: #960101;
+    color: white;
+    border: 2px solid;
+  }
+  
+  .button.modify {
+    background-color: #0a7803;
+    color: white;
+    border: 2px solid;
+  }
+  
+  .button.add {
+    background-color: #000141;
+    color: white;
+    border: 2px solid;
+  }
+  
+  .button.show {
+    background-color: #630054;
+    color: white;
+    border: 2px solid;
+  }
+  
+  .button.add:hover{
+    background-color: white;
+    border: 2px solid;
+    border-color: #000141;
+    color: #000141;
+  }
+
+  .button.delete:hover{
+    background-color: white;
+    border: 2px solid;
+    border-color: #960101;
+    color: #960101;
+
+  }
+
+  .button.modify:hover{
+    background-color: white;
+    border: 2px solid;
+    border-color: #0a7803;
+    color: #0a7803;
+  }
+
+  .button.show:hover{
+    background-color: white;
+    border: 2px solid;
+    border-color: #630054;
+    color: #630054;
+  }
+
+  .container{
+    animation: slide-up 1s ease-in-out forwards;
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

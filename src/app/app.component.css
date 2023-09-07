@@ -1,0 +1,154 @@
+/* Add your CSS styles here */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden ;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+#sidebar {
+  width: 250px;
+  background:linear-gradient(to bottom,rgb(15, 9, 56),rgb(27, 39, 117));
+  color: #fff;
+  padding: 20px;
+  position: relative;
+}
+
+#sidebar h2 {
+  font-size: 450%;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-bottom: 20px;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+#sidebar ul li {
+  margin-bottom: 10px;
+}
+
+#sidebar ul li a {
+  display: block;
+  font-weight: 800;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 5px;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#sidebar ul li.expandable:hover > .sub-menu {
+  display: block;
+}
+
+#sidebar ul li .sub-menu {
+  display: list-item;
+  list-style: none;
+  margin-left: 10px;
+  padding: 0;
+}
+
+#sidebar ul li .sub-menu li a {
+  display: block;
+  padding: 5px;
+  color: white;
+  text-decoration: none;
+}
+
+#sidebar ul li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, #25476A, transparent);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.5s;
+}
+
+#sidebar ul li a:hover::before {
+  transform: scaleY(1);
+  color: white;
+}
+
+#sidebar ul li a:hover {
+  background-color: #25476A;
+  color: white;
+}
+
+#sidebar ul li .sub-menu li a:hover{
+  color: white;
+  background-color: #4480bd;
+}
+
+#content {
+  flex: 1;
+  padding: 20px;
+  
+  background-image: url('C:/Users/yassi/Downloads/Lovepik_com-402009661-simple-geometric-business-background.jpg');
+}
+
+footer {
+  background-color: rgb(27, 39, 117);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  width: 80%;
+  font-weight: 550;
+}
+
+.expandable > .sub-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.7s ease-in-out 0.3s;
+}
+
+.expandable:hover > .sub-menu {
+  max-height: 200px;
+  transition: 0.7s ease-in-out;
+}
+
+h2 {
+  color: white;
+  font-weight: 550;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Modern style for horizontal lines (hr elements) */
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #25476A, transparent);
+  margin: 10px 0;
+  opacity: 0.8;
+}
+
+/* Additional styles for specific hr elements */
+/* For example, hr elements inside the sidebar */
+#sidebar hr {
+  background: linear-gradient(to right, transparent, white, transparent);
+  opacity: 1;
+}
+
+/* Additional style for logo bar */
+.logo-bar {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, white, blue);
+  margin: 50px 0;
+  opacity: 0.8;
+}

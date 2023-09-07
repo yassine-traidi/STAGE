@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body class="container">
+  <div class="form-container">
+    <div class="form-group">
+      <label for="question">Question</label>
+      <textarea name="question" id="question" placeholder="Enter your question here" required
+                [(ngModel)]="question.content"></textarea>
+    </div>
+  
+    <div class="form-group">
+      <label for="image-url">Image URL</label>
+      <input type="text" name="image-url" id="image-url" placeholder="Enter the image URL"
+             [(ngModel)]="question.link">
+    </div>
+  
+    <div class="answers-container">
+      <div class="form-group" *ngFor="let answer of answers; let i = index">
+        <label for="answer{{i}}">Answer {{i + 1}}</label>
+        <input type="text" name="answer{{i}}" id="answer-content" placeholder="Enter answer content"
+               [(ngModel)]="answer.content"/>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="correct-answer{{i}}" [(ngModel)]="answer.value" value="true">
+            True
+          </label>
+          <label>
+            <input type="radio" name="correct-answer{{i}}" [(ngModel)]="answer.value" value="false">
+            False
+          </label>
+        </div>
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="new-answer">New Answer</label>
+      <textarea type="text" id="new-answer" [(ngModel)]="newAnswerContent" placeholder="Enter new answer content"></textarea>
+      <div class="radio-group">
+        <label>
+          <input type="radio" [attr.id]="'isCorrectTrue_' + answers.length" name="new-correct-answer" [(ngModel)]="newAnswerValue" value="true">
+          True
+        </label>
+        <label>
+          <input type="radio" [attr.id]="'isCorrectFalse_' + answers.length" name="new-correct-answer" [(ngModel)]="newAnswerValue" value="false">
+          False
+        </label>
+      </div>
+      <button type="button" (click)="addNewAnswer()">Add Answer</button>
+    </div>
+  
+    <div class="form-group">
+      <button type="button" (click)="saveQuestionAndGetId()">Save</button>
+    </div>
+
+    <p [style.color]="messageType === 'success' ? '#008000' : '#FF0000'" style="font-weight: bolder;">{{ output }}</p>
+
+
+  </div>
+    
+</body>
+</html>

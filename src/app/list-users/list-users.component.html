@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body class="container">
+  <div class="user-list">
+    <div class="user-card" *ngFor="let user of users">
+      <div class="user-info">
+        <h3 class="username">{{ user.username }}</h3>
+        <hr>
+        <p><strong style="color: black;">Email</strong>: {{ user.email }}</p>
+        <hr>
+        <p><strong style="color: black;">Phone</strong>: {{ user.phone }}</p>
+        <hr>
+      </div>
+      <div class="user-buttons">
+        <button class="details-button" (click)="redirectToUserDetails(user.id,user.username)" >View Submissions</button>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
+  

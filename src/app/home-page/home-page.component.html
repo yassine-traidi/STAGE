@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+
+</head>
+<body class="container">
+    <div class="user-details">
+        <h1 class="latest">Latest submissions</h1>
+    
+        <table>
+          <thead>
+            <tr>
+              <th>Candidate</th>
+              <th>Quiz</th>
+              <th>Score</th>
+              <th>Date</th>
+              <th>Quiz copy</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let entry of this.scores.reverse().slice(0,10)">
+            <tr>
+              <td (mouseenter)="showTooltip(entry.user.username)" (mouseleave)="hideTooltip()">{{entry.user.username}}</td>
+              <td>{{ entry.quiz.description }}</td>
+              <td>{{ entry.score }} / 20</td>
+              <td>{{entry.date}}</td>
+              <td class="detail-column"><button class="details" (click)="redirectToDetails(entry.quiz.id,entry.user.id)"><i class="fas fa-sticky-note"></i></button></td>
+            </tr>
+          </tbody>
+        </table>
+    
+      </div>
+    
+</body>
+</html>

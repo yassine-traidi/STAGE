@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body class="container">
+  <div class="quiz-list">
+    <div class="quiz-card" *ngFor="let quiz of quizzes">
+      <div class="card-content">
+        <pre class="quiz-description">{{ quiz.description }}</pre>
+        
+        <div class="button-group">
+          <button class="button delete" (click)="deleteQuiz(quiz)">Delete</button>
+          <button class="button modify" (click)="editQuiz(quiz)">Modify</button>
+          <button class="button add" (click)="addQuestions(quiz)">Add Questions</button>
+          <button class="button show" (click)="showQuestions(quiz)">Show Questions</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</body>
+</html>

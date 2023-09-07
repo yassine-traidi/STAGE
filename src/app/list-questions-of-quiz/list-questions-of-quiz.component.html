@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body class="container">
+  <div class="card-container">
+    <mat-card *ngFor="let question of questions" class="question-card">
+      <div class="card-content">
+        <h2 style="color: rgb(0, 60, 255);">Question</h2>
+        <pre>{{ question.content }}</pre>
+      </div>
+  
+      <div class="answers-list">
+        <h2 style="color: rgb(0, 60, 255);">Answers:</h2>
+        <ul>
+          <li *ngFor="let answer of question.answers">
+            {{ answer.content }} : <span [ngClass]="{ 'true-label': answer.value, 'false-label': !answer.value }">{{ answer.value ? 'True' : 'False' }}</span>
+          </li>
+        </ul>
+      </div>
+  
+      <mat-card-actions>
+        <button mat-icon-button class="edit-icon">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button class="delete-icon" (click)="deleteQuestion(question)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  
+  
+</body>
+</html>

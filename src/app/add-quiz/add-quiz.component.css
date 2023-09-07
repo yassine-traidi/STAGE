@@ -1,0 +1,63 @@
+.quiz-management {
+    position: relative;
+  }
+  
+  .add-quiz-button {
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    width: 280px;
+  }
+  
+  .form-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+    background-color: white;
+  }
+  
+  .form-container {
+    padding: 10px;
+  }
+  
+  .form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    opacity: 0.8;
+  }
+  
+  .form-container .cancel {
+    background-color: red;
+  }
+  
+  .form-container .btn:hover {
+    opacity: 1;
+  }
+
+  .container{
+    animation: slide-up 1s ease-in-out forwards;
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
