@@ -180,7 +180,10 @@ export class QuizSpaceComponent {
 
   //scroll up when next-page is clicked
   scrollToTop() {
-    window.scrollTo(0, 0);
+    window.scrollTo({
+      top:0,
+      behavior:'smooth',
+    });
   }
 
 
@@ -287,14 +290,15 @@ export class QuizSpaceComponent {
       let phone=(document.getElementById("phone") as HTMLInputElement).value;
       let email=(document.getElementById("email") as HTMLInputElement).value;
       if(username=="" && phone=="" && email=="" ){
+        //TOASTR
         alert("Please fill out the form below!");
-        // toastr 
+        
       }
       else{
-      // Display the success alert
+      // TOASTR
     
       // Redirect to the home page
-     this.router.navigate(['/home-page']);
+     this.router.navigate(['/list-quizzes-for-candidate']);
       }
     }
 }

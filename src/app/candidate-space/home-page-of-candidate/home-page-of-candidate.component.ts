@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class HomePageOfCandidateComponent {
 
+
   constructor(private router:Router) {}
 
   redirectToQuizzes(){

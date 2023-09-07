@@ -22,7 +22,6 @@ import { QuizSpaceComponent } from './candidate-space/quiz-space/quiz-space.comp
 import { HomePageOfCandidateComponent } from './candidate-space/home-page-of-candidate/home-page-of-candidate.component';
 
 const routes: Routes = [
-  {path:'', redirectTo: '/home-page', pathMatch: 'full' },
   {path:'user-managment',component:UserManagmentComponent},
   {path:'add-user',component:AddUserComponent},
   {path:'admin-space',component:AdminSpaceComponent},
