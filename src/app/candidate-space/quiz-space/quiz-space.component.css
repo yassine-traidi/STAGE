@@ -312,6 +312,11 @@
   html{
     scroll-behavior: smooth;
   }
+
+  .image-url{
+    width: 100%;
+    height: auto;
+  }
   
   
   

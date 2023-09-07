@@ -20,6 +20,7 @@
                     <div class="list-group-item">
                         <h5 class="mb-3">Question number {{(p - 1) * itemsPerPage + i + 1}}</h5>
                         <pre class="question">{{question.content}}</pre>
+                        <img class="image-url" src="{{question.link}}" *ngIf="question.link!=''">
                         <h5 class="mb-3">What is the correct output?</h5>
                             <ng-container *ngFor="let answer of question.answers; let j=index">
                                 <ul>

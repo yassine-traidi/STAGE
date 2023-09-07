@@ -31,8 +31,8 @@ import { FooterComponent } from './candidate-space/footer/footer.component';
 import { ListQuizzesForCandidateComponent } from './candidate-space/list-quizzes-for-candidate/list-quizzes-for-candidate.component';
 import { QuizSpaceComponent } from './candidate-space/quiz-space/quiz-space.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { HomePageOfCandidateComponent } from './candidate-space/home-page-of-candidate/home-page-of-candidate.component';
 import { AdminNavbarComponent } from './admin-navbar/admin-navbar.component';
+import { HomePageOfCandidateComponent } from './candidate-space/home-page-of-candidate/home-page-of-candidate.component';
 
 @NgModule({
   declarations: [
