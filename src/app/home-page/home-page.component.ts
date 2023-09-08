@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ScoreService } from '../services/score.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Score } from '../interfaces/score';
+import { QuizService } from '../services/quiz.service';
+import { Question } from '../interfaces/question';
  
 
 @Component({
@@ -16,7 +18,9 @@ export class HomePageComponent implements OnInit{
   tooltipVisible = false;
   tooltipText = '';
 
-  constructor(private scoreService:ScoreService,private router:Router) {
+  questions:Question[]=[];
+
+  constructor(private scoreService:ScoreService,private router:Router,private quizService:QuizService) {
     
    }
   ngOnInit(){
@@ -48,6 +52,20 @@ export class HomePageComponent implements OnInit{
 
   redirectToDetails(id:number,userId:number){
     this.router.navigate(['/user-answers'],{queryParams:{quizId:id, userId:userId}});
+  }
+
+  countQuestionsOfQuiz(id: number):number{
+    this.quizService.listQuestionsOfQuiz(id).subscribe(
+      (response:Question[])=>{
+        this.questions=response;
+      }
+    ),
+    (error:any)=>{
+
+      console.log(error);
+    }
+
+    return this.questions.length;
   }
 }
   

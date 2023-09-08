@@ -14,7 +14,7 @@ export class AppComponent implements OnInit{
     this.redirect();
   }
 
-  isAdmin:boolean=false;
+  isAdmin:boolean=true;
 
   redirect(){
     if(!this.isAdmin){
