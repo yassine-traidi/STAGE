@@ -7,9 +7,9 @@
 </head>
 <body class="container">
   <div class="card-container">
-    <mat-card *ngFor="let question of questions" class="question-card">
+    <mat-card *ngFor="let question of questions ;let i=index" class="question-card">
       <div class="card-content">
-        <h2 style="color: rgb(0, 60, 255);">Question</h2>
+        <h2 style="color: rgb(0, 60, 255);">Question {{i+1}}</h2>
         <pre>{{ question.content }}</pre>
       </div>
   

@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
   <title>Document</title>
 </head>
 <body class="container">
@@ -15,13 +17,15 @@
           <th>Quiz</th>
           <th>Score</th>
           <th>Date</th>
+          <th>Quiz copy</th>
         </tr>
       </thead>
       <tbody *ngFor="let entry of this.scoresOfUser">
         <tr>
           <td>{{ entry.quiz.description }}</td>
-          <td>{{ entry.score }} / {{ countQuestionsOfQuiz(entry.quiz.id) }}</td>
+          <td>{{ entry.score }} / {{ countQuestions(entry.quiz.id) }}</td>
           <td>{{entry.date}}</td>
+          <td class="detail-column"><button class="details" (click)="redirectToDetails(entry.quiz.id,entry.user.id)"><i class="fas fa-sticky-note"></i></button></td>
         </tr>
       </tbody>
     </table>

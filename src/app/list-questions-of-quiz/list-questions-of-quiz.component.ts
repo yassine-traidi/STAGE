@@ -16,6 +16,7 @@ export class ListQuestionsOfQuizComponent implements OnInit {
   quizId: number = 0;
   quizDescription = '';
 
+
   constructor(private quizService: QuizService, private route: ActivatedRoute,private questionService:QuestionService) {
     this.route.queryParams.subscribe(params => {
       this.quizId = params['quizId'];

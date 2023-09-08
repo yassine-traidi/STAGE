@@ -48,5 +48,10 @@ export class QuestionService {
       return this.http.get<Answer[]>(`${this.baseUrl}/${id}/getAnswers`);
     }
 
+    //getAll
+    public getAll():Observable<Question[]>{
+      return this.http.get<Question[]>(`${this.baseUrl}/getAll`);
+    }
+
 
 }

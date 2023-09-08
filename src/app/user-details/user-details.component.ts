@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ScoreService } from '../services/score.service';
 import { Score } from '../interfaces/score';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { QuizService } from '../services/quiz.service';
 import { Question } from '../interfaces/question';
+import { QuestionService } from '../services/question.service';
 
 @Component({
   selector: 'app-user-details',
@@ -22,7 +23,8 @@ export class UserDetailsComponent implements OnInit{
 
 
 
-  constructor(private scoreService:ScoreService,private route:ActivatedRoute,private quizService:QuizService) { 
+  constructor(private scoreService:ScoreService,private route:ActivatedRoute,private quizService:QuizService,private router:Router,
+    private questionService:QuestionService) { 
     this.route.queryParams.subscribe(params => {
       this.userId = params['userId'];
       this.username = params['username'];
@@ -32,6 +34,7 @@ export class UserDetailsComponent implements OnInit{
   ngOnInit(){
     this.listScores();
     console.log(this.scoresOfUser);
+    this.getQuestions();
     }
 
   //list all scores
@@ -61,18 +64,29 @@ export class UserDetailsComponent implements OnInit{
     console.log(this.scoresOfUser);
   }
 
-  countQuestionsOfQuiz(id: number):number{
-    this.quizService.listQuestionsOfQuiz(id).subscribe(
+  getQuestions(){
+    this.questionService.getAll().subscribe(
       (response:Question[])=>{
         this.questions=response;
       }
     ),
     (error:any)=>{
-
-      console.log(error);
+      console.log('error !',error);
     }
+  }
 
-    return this.questions.length;
+  countQuestions(id:number):number{
+    let total=0;
+    for(const question of this.questions){
+      if(question.quiz?.id==id){
+        total+=1;
+      }
+    }
+    return total;
+  }
+
+  redirectToDetails(id:number,userId:number){
+    this.router.navigate(['/user-answers'],{queryParams:{quizId:id, userId:userId}});
   }
 
 

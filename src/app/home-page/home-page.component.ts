@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Score } from '../interfaces/score';
 import { QuizService } from '../services/quiz.service';
 import { Question } from '../interfaces/question';
+import { Subscription } from 'rxjs';
+import { QuestionService } from '../services/question.service';
  
 
 @Component({
@@ -20,11 +22,15 @@ export class HomePageComponent implements OnInit{
 
   questions:Question[]=[];
 
-  constructor(private scoreService:ScoreService,private router:Router,private quizService:QuizService) {
+  private subscriptions: Subscription[] = [];
+
+  constructor(private scoreService:ScoreService,private router:Router,private quizService:QuizService,
+    private questionService:QuestionService) {
     
    }
   ngOnInit(){
     this.listScores();
+    this.getQuestions();
   }
 
   //list all scores
@@ -53,19 +59,34 @@ export class HomePageComponent implements OnInit{
   redirectToDetails(id:number,userId:number){
     this.router.navigate(['/user-answers'],{queryParams:{quizId:id, userId:userId}});
   }
+  
 
-  countQuestionsOfQuiz(id: number):number{
-    this.quizService.listQuestionsOfQuiz(id).subscribe(
+  getQuestions(){
+    this.questionService.getAll().subscribe(
       (response:Question[])=>{
         this.questions=response;
       }
     ),
     (error:any)=>{
-
-      console.log(error);
+      console.log('error !',error);
     }
+  }
 
-    return this.questions.length;
+  countQuestions(id:number):number{
+    let total=0;
+    for(const question of this.questions){
+      if(question.quiz?.id==id){
+        total+=1;
+      }
+    }
+    return total;
+  }
+
+
+
+  ngOnDestroy() {
+    // Unsubscribe from all subscriptions
+    this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }
 }
   
